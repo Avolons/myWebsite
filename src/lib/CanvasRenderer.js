@@ -1,8 +1,10 @@
 /**
  * @author mrdoob / http://mrdoob.com/
  */
-var THREE=require('three');
-console.log(THREE.SpriteCanvasMaterial);
+
+var THREE =require('../../node_modules/three/build/three.module');
+
+import  '../lib/Projector.js';
 
 THREE.SpriteCanvasMaterial = function ( parameters ) {
 
@@ -34,7 +36,6 @@ THREE.SpriteCanvasMaterial.prototype.clone = function () {
 };
 
 //
-console.log(1);
 
 THREE.CanvasRenderer = function ( parameters ) {
 

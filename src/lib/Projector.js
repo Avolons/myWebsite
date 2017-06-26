@@ -4,7 +4,8 @@
  * @author julianwa / https://github.com/julianwa
  */
 
-var THREE=require('three');
+var THREE =require('../../node_modules/three/build/three.module');
+
 
 
 THREE.RenderableObject = function () {

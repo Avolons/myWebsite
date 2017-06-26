@@ -3,9 +3,8 @@
 </template>
 
 <script>
-var THREE=require('three');
-var Projector=require('../lib/Projector.js');
-var CanvasRenderer=require('../lib/CanvasRenderer.js');
+
+import THREE from '../../node_modules/three/examples/js/renderers/CanvasRenderer.js'
 
 export default {
   name: 'Line',
@@ -124,11 +123,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 html,body{
   height: 100%;
   overflow: hidden;
-  background-color: #060e1b;
+  background-color:#060e1b;
 }
 #line{
       height: 100%;
