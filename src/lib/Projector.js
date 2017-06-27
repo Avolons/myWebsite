@@ -4,7 +4,6 @@
  * @author julianwa / https://github.com/julianwa
  */
 
-var THREE=require('three');
 
 
 THREE.RenderableObject = function () {

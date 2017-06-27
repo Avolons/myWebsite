@@ -3,9 +3,8 @@
 </template>
 
 <script>
-var THREE=require('three');
-var Projector=require('../lib/Projector.js');
-var CanvasRenderer=require('../lib/CanvasRenderer.js');
+
+import  THREE from '../lib/CanvasRenderer.js'
 
 export default {
   name: 'Line',
