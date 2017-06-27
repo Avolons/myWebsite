@@ -1,6 +1,8 @@
 <template>
-  <div class="magicouter">
-    <svg :width="400" :height="400" viewBox="0 0 800 800">
+<div class="magicouter ">
+   <div class="bcclass"></div>
+    <div class="magicinner">
+    <svg  viewBox="0 0 800 800">
       <defs>
         <filter :id="`blur${_uid}`">
           <feGaussianBlur in="SourceGraphic" :stdDeviation="std" />
@@ -106,6 +108,8 @@
       <!--outer most-->
     </svg>
   </div>
+</div>
+  
 </template>
 
 <script>
@@ -117,7 +121,7 @@ export default{
             height: 800,
             zodiac: Array(12).fill(0).map((_, i) => String.fromCharCode(9800 + i)),
             background: 'black',
-            blue: 'yellow',
+            blue:'#1553bc',
             std: 0
         };
     },
@@ -125,7 +129,7 @@ export default{
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scope>
+<style scope lang="scss">
 html,body{
   height: 100%;
   overflow: hidden;
@@ -138,12 +142,39 @@ html,body{
 }
 
 .magicouter {
-  height: 400px;
-  width: 400px;
-   position: absolute;
+  height: 700px;
+  width: 700px;
+  position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50% ,-50%);
+  transform: translate(-50% ,-50%) ;
+  >.magicinner{
+    transform-style: preserve-3d;
+    height: 100%;
+    // transform: rotateX(80deg) translateY(600px) scale(1.5);
+    transition: all 0.5s ease-in;
+  }
+  >.bcclass{
+      &:hover {
+        transform: translateY(-20px);
+        +.magicinner{
+          transform: rotateX(70deg) translateY(600px) scale(2);
+         }
+      }
+      transition: all 0.2s ease-in;
+      cursor: pointer;
+      height: 100%;
+      background-image: url("../assets/bc.png");
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      position: absolute;
+      transform-style: preserve-3d;
+      left: 0;
+      top: 0;
+      z-index: 1;
+  }
+ 
 }
 
 
@@ -157,6 +188,14 @@ html,body{
 }
 
 svg {
-  animation: 20s rotate infinite linear;
+   animation: 20s rotate infinite linear;
+  >g{
+ 
+  }
+  >defs{
+  // animation: 10s rotate infinite linear;
+  }
+  width: 700px;
+  height: 700px;
 }
 </style>
