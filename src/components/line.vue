@@ -4,7 +4,7 @@
 
 <script>
 
-import  THREE from '../lib/CanvasRenderer.js'
+import THREE from '../lib/CanvasRenderer.js'
 
 export default {
   name: 'Line',
@@ -30,8 +30,8 @@ export default {
               e.appendChild(m.domElement);
               var i = 2 * Math.PI
                 , o = new THREE.SpriteCanvasMaterial({
-                  color: 16777215,
-                  opacity: .5,
+                  color: '#fff',
+                  opacity: 0.7,
                   program: function(e) {
                       e.beginPath(),
                       e.arc(0, 0, .5, 0, i, !0),
@@ -55,7 +55,7 @@ export default {
                       a.position.y = 2 * Math.random() - 1,
                       a.position.z = 2 * Math.random() - 1,
                       a.position.normalize(),
-                      a.position.multiplyScalar(10 * Math.random() + 450),
+                      a.position.multiplyScalar(10 * Math.random() + 300),
                       a.scale.x = a.scale.y = 2,
                       p.add(a),
                       b.vertices.push(a.position),
@@ -65,7 +65,7 @@ export default {
                 , b = new THREE.Geometry;
               f(10);
               var w = new THREE.Line(b,new THREE.LineBasicMaterial({
-                  color: "#21B8CC",
+                  color: "#1553bc",
                   opacity: .2
               }));
               p.add(w),
@@ -123,11 +123,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 html,body{
   height: 100%;
   overflow: hidden;
-  background-color: #060e1b;
+  background-color:#060e1b;
 }
 #line{
       height: 100%;

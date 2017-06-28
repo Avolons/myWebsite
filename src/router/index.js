@@ -4,6 +4,7 @@ import Star from '@/components/star'
 import Line from '@/components/line'
 import Magic from '@/components/magic'
 import Tron from '@/components/tron'
+import Clock from '@/components/clock'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/tron',
       name: 'Tron',
       component: Tron
+    },
+    {
+      path: '/clock',
+      name: 'Clock',
+      component: Clock
     },
   ]
 })

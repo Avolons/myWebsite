@@ -1,7 +1,7 @@
 <template>
-    <div id="tron" @mousemove="coords">
-        <div id="contain">
-            <div class="square square2">
+    <div id="com-tron" @mousemove="coords">
+        <div class="tron-contain">
+            <div class="square square-mid">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 419.9 421.9" preserveAspectRatio="none">
                     <title>
                         circ3
@@ -588,7 +588,7 @@
                     <path d="M270.5,332.7h1.3a42.7,42.7,0,0,1,0-64.5h-1.3a43.5,43.5,0,0,0,0,64.5Z" transform="translate(-96.2 -82.1)" fill="#f39124" />
                 </svg>
             </div>
-            <div class="square square1">
+            <div class="square square-top">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440.9 395.4" preserveAspectRatio="none">
                     <title>
                         circ2
@@ -632,7 +632,7 @@
                     <path d="M327.1,224.7l-2.1,5.7a74.6,74.6,0,0,1,49.1,65.3l6.1-.4A80.7,80.7,0,0,0,327.1,224.7Z" transform="translate(-79.4 -108.6)" fill="#14becd" />
                 </svg>
             </div>
-            <div class="square square3">
+            <div class="square square-bottom">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550.1 550.1" preserveAspectRatio="none">
                     <title>
                         circ4
@@ -1217,134 +1217,135 @@
 </template>
 
 <script>
-    export default{
-        name:'tron',
-        data(){
-            return{
-                 x: 0,
-                 y: 0
-            };
-        },
-        methods: {
-            coords(e) {
+export default {
+    name: 'tron',
+    data() {
+        return {
+            x: 0,
+            y: 0
+        };
+    },
+    methods: {
+        coords(e) {
             this.x = e.clientX / 10;
             this.y = e.clientY / 10;
-            },
-        }
+        },
     }
+}
 </script>
 
-<style lang="scss">
-#tron {
-  width: 100%;
-  height: 100%;
-  background-color: #333;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#contain {
-  position: relative;
-  height: 50%;
-  width: 50%;
-  perspective: 1000px;
-  perspective-origin: 50% 50%;
-}
-
-.square {
-  width: 100%;
-  height: 100px;
-  text-align: center;
-  padding: 50px 0;
-  font-size: 30px;
-  position: absolute;
-//   animation: svgrote  2s linear infinite;
-  svg {
-    width: 300px;
-    height: 300px;
-  }
-}
-
-@keyframes svgrote{
-    0%{
-       transform: rotate(0deg);
+<style scoped lang="scss">
+#com-tron {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    >.tron-contain {
+        position: relative;
+        height: 50%;
+        width: 50%;
+        perspective: 1000px;
+        perspective-origin: 50% 50%;
+        .square {
+            width: 100%;
+            height: 100px;
+            text-align: center;
+            padding: 50px 0;
+            font-size: 30px;
+            position: absolute;
+            //   animation: svgrote  2s linear infinite;
+            svg {
+                width: 300px;
+                height: 300px;
+            }
+        }
     }
-    100%{
+}
+
+
+@keyframes svgrote {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
         transform: rotate(360deg);
     }
 }
-@keyframes svgtop{
-    0%{
-       transform: translateY(0px) rotateX(0deg);
+
+@keyframes svgtop {
+    0% {
+        transform: translateY(0px) rotateX(0deg);
     }
-    20%{
+    20% {
         transform: translateY(0px) rotateX(55deg);
     }
-    30%{
+    30% {
         transform: translateY(0px) rotateX(55deg);
     }
-    80%{
+    80% {
         transform: translateY(80px) rotateX(55deg);
     }
-    100%{
+    100% {
         transform: translateY(80px) rotateX(55deg);
     }
 }
-@keyframes svgmid{
-    0%{
-       transform: translateY(0px) rotateX(0deg);
+
+@keyframes svgmid {
+    0% {
+        transform: translateY(0px) rotateX(0deg);
     }
-    20%{
+    20% {
         transform: translateY(0px) rotateX(55deg);
     }
-    100%{
+    100% {
         transform: translateY(0px) rotateX(55deg);
     }
 }
-@keyframes svgbottom{
-    0%{
-       transform: translateY(0px) rotateX(0deg);
+
+@keyframes svgbottom {
+    0% {
+        transform: translateY(0px) rotateX(0deg);
     }
-    20%{
+    20% {
         transform: translateY(0px) rotateX(55deg);
     }
-    30%{
+    30% {
         transform: translateY(0px) rotateX(55deg);
     }
-    80%{
+    80% {
         transform: translateY(-80px) rotateX(55deg);
     }
-    100%{
+    100% {
         transform: translateY(-80px) rotateX(55deg);
     }
 }
 
 
-.square3{
+.square-bottom {
     transform: translateY(80px) rotateX(55deg);
-    animation: svgtop  2s linear;
-    >svg{
-    animation: svgrote  2s linear  2s infinite;
-     width: 350px;
-    height: 350px;
+    animation: svgtop 2s linear;
+    >svg {
+        animation: svgrote 2s linear 2s infinite;
+        width: 350px;
+        height: 350px;
     }
 }
 
-.square1 {
-  transform: translateY(0px) rotateX(55deg);
-   animation: svgmid  2s linear;
-    svg{
-    animation: svgrote  3s linear 2s infinite;
-}
-}
-
-.square2 {
-  transform: translateY(-80px) rotateX(55deg);
-   animation: svgbottom  2s linear;
-    >svg{
-    animation: svgrote  4s linear 2s infinite;
+.square-top {
+    transform: translateY(0px) rotateX(55deg);
+    animation: svgmid 2s linear;
+    svg {
+        animation: svgrote 3s linear 2s infinite;
     }
 }
 
+.square-mid {
+    transform: translateY(-80px) rotateX(55deg);
+    animation: svgbottom 2s linear;
+    >svg {
+        animation: svgrote 4s linear 2s infinite;
+    }
+}
 </style>

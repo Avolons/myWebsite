@@ -18,9 +18,6 @@ export default {
     stars = [],
     count = 0,
     maxStars = 1400;
-
-// Thanks @jackrugile for the performance tip! https://codepen.io/jackrugile/pen/BjBGoM
-// Cache gradient
 var canvas2 = document.createElement('canvas'),
     ctx2 = canvas2.getContext('2d');
     canvas2.width = 100;
@@ -37,7 +34,6 @@ var half = canvas2.width/2,
     ctx2.arc(half, half, half, 0, Math.PI * 2);
     ctx2.fill();
 
-// End cache
 
 function random(min, max) {
   if (arguments.length < 2) {
