@@ -1,16 +1,22 @@
 <template>
-  <div id='line'></div>
+  <div id='mod-line'>
+    <hello></hello>
+  </div>
 </template>
 
 <script>
 
 import THREE from '../lib/CanvasRenderer.js'
-
+import Hello from './Hello'
 export default {
   name: 'Line',
   data () {
     return {
     }
+  },
+   component: {
+    // Magic
+    Hello
   },
   mounted(){
      function createLine( t) {
@@ -118,18 +124,13 @@ export default {
               y.getTime()
           }
       }
-      createLine(document.getElementById('line'));
+      createLine(document.getElementById('mod-line'));
 }
 }
 </script>
 
-<style>
-html,body{
-  height: 100%;
-  overflow: hidden;
-  background-color:#060e1b;
-}
-#line{
+<style scoped>
+#mod-line{
       height: 100%;
       width: 100%;
       overflow: hidden;

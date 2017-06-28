@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
 }
 </script>
 
@@ -15,10 +15,13 @@ export default {
   margin: 0;
   padding: 0;
 }
-body,html{
+html,
+body {
   height: 100%;
   overflow: hidden;
+  background-color: #060e1b;
 }
+
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
