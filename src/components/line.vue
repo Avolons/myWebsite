@@ -4,7 +4,7 @@
 
 <script>
 
-import THREE from '../../node_modules/three/examples/js/renderers/CanvasRenderer.js'
+import THREE from '../lib/CanvasRenderer.js'
 
 export default {
   name: 'Line',
