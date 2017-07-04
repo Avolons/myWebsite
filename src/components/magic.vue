@@ -125,13 +125,13 @@ export default {
 @font-face {
   font-family: 'Direction';
   src: url('https://cdn.rawgit.com/reverland/blank/0aba7d84/mohojin-chinese-direction/Mohojin Chinese Direction.woff') format('woff'), /* chrome、firefox */
-  url('https://cdn.rawgit.com/reverland/blank/0aba7d84/mohojin-chinese-direction/Mohojin%20Chinese%20Direction.ttf') format('truetype');
+   url('https://cdn.rawgit.com/reverland/blank/0aba7d84/mohojin-chinese-direction/Mohojin%20Chinese%20Direction.ttf') format('truetype');
   /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
 }
 
 #mod-magic{
-  height: 700px;
-  width: 700px;
+  height: 77%;
+  width: 37%;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -153,10 +153,10 @@ export default {
     height: 100%;
     background-image: url("../assets/bc.png");
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     width: 100%;
     position: absolute;
-
     transform-style: preserve-3d;
     left: 0;
     top: 0;
@@ -175,7 +175,7 @@ export default {
 
 svg {
   animation: 20s rotate infinite linear;
-  width: 700px;
-  height: 700px;
+  width: 100%;
+  height: 100%;
 }
 </style>

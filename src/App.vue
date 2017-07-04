@@ -17,6 +17,7 @@ export default {
 }
 html,
 body {
+   font-size: 62.5%;
   height: 100%;
   overflow: hidden;
   background-color: #060e1b;

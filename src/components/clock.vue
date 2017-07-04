@@ -93,29 +93,26 @@ export default {
 
         TweenMax.set('svg', {
             visibility: 'visible'
-        })
+        })//设置svg可见
         TweenMax.set([hourHand, minuteHand], {
             transformOrigin: '50% 100%'
-        })
+        })//设置时针，分针
 
         TweenMax.set('.timeScaleHit', {
             width: maxDrag
-        })
+        })//设置时间轴
+
         TweenMax.set(clockGroup, {
             y: -20
-        })
-
-        /* TweenMax.set(bellBtn, {
-         svgOrigin:'160 350',
-         scale:3
-        }) */
+        })//
 
         TweenMax.set(alarmBell, {
             attr: {
                 x: alarmBellOffsetX
             }
-        })
+        })//设置铃铛位置
 
+        //设置时间轴时间刻度
         function makeTimeScale() {
 
             var marker, labelGroup
@@ -128,7 +125,7 @@ export default {
                 var posX = centerX + (i * multiplier);
 
                 if (i % timeScaleInterval == 0) {
-
+                    // 克隆时间点
                     labelGroup = timeLabelGroup.cloneNode(true);
                     timeScaleMarkerGroup.appendChild(labelGroup);
                     labelGroup.querySelector('.timeLabelBtn').setAttribute('data-btnId', i / minutesInHour);
@@ -151,32 +148,35 @@ export default {
                     labelGroup.querySelector('.timeLabel').textContent = String(i / minutesInHour);
 
                     //every 30 minutes
-                } else if (i % (minutesInHour / 2) == 0) {
+                } 
+                // else if (i % (minutesInHour / 2) == 0) {
 
-                    TweenMax.set(marker, {
-                        attr: {
-                            x1: posX,
-                            x2: posX,
-                            y1: 460,
-                            y2: 445
-                        },
-                        stroke: timeScaleMarkerColor,
-                        strokeWidth: 1
-                    })
-                    //every timeScaleMarkers minutes (5)
-                } else if (i % timeScaleMarkers == 0) {
+                //     TweenMax.set(marker, {
+                //         attr: {
+                //             x1: posX,
+                //             x2: posX,
+                //             y1: 460,
+                //             y2: 445
+                //         },
+                //         stroke: timeScaleMarkerColor,
+                //         strokeWidth: 1
+                //     })
+                //     //every timeScaleMarkers minutes (5)
+                // } 
+                // else if (i % timeScaleMarkers == 0) {
 
-                    TweenMax.set(marker, {
-                        attr: {
-                            x1: posX,
-                            x2: posX,
-                            y1: 460,
-                            y2: 450
-                        },
-                        stroke: timeScaleMarkerColor,
-                        strokeWidth: 1
-                    })
-                } else {
+                //     TweenMax.set(marker, {
+                //         attr: {
+                //             x1: posX,
+                //             x2: posX,
+                //             y1: 460,
+                //             y2: 450
+                //         },
+                //         stroke: timeScaleMarkerColor,
+                //         strokeWidth: 1
+                //     })
+                // } 
+                else {
 
                     timeScaleMarkerGroup.removeChild(marker);
                 }

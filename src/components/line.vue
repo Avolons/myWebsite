@@ -1,22 +1,16 @@
 <template>
   <div id='mod-line'>
-    <hello></hello>
   </div>
 </template>
 
 <script>
 
 import THREE from '../lib/CanvasRenderer.js'
-import Hello from './Hello'
 export default {
   name: 'Line',
   data () {
     return {
     }
-  },
-   component: {
-    // Magic
-    Hello
   },
   mounted(){
      function createLine( t) {
@@ -37,10 +31,10 @@ export default {
               var i = 2 * Math.PI
                 , o = new THREE.SpriteCanvasMaterial({
                   color: '#fff',
-                  opacity: 0.7,
+                  opacity: 0.3,
                   program: function(e) {
                       e.beginPath(),
-                      e.arc(0, 0, .5, 0, i, !0),
+                      e.arc(0, 0, .1, 0, i, !0),
                       e.fill()
                   }
               })
@@ -72,7 +66,7 @@ export default {
               f(10);
               var w = new THREE.Line(b,new THREE.LineBasicMaterial({
                   color: "#1553bc",
-                  opacity: .2
+                  opacity: .1
               }));
               p.add(w),
               document.addEventListener("mousemove", l, !1),
@@ -134,7 +128,7 @@ export default {
       height: 100%;
       width: 100%;
       overflow: hidden;
-      position:absolute;
+      position:fixed;
       top:0;
       left:0;
         }
