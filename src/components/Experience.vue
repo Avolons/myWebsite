@@ -326,7 +326,6 @@ html {
     color: #2C2C2C;
     min-width: 600px;
     height: 100%;
-    background: white;
     font: 400 1em 'Lato';
     -webkit-font-smoothing: antialiased;
 }
